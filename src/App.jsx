@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
  export default function App() {
 
- 
+ const [clickMenu,setClickMenu]=useState(false)
+console.log(clickMenu);
 
   return (
     <div className='bg-slate-800 h-screen'>
@@ -12,12 +13,13 @@ import React from 'react'
 max-w-full items-center h-14 bg-sky-500 '>
   <div className='text-3xl font-normal text-slate-200
   border-b-4 border-yellow-500 cursor-pointer'>TALHA WAJID</div>
-  <div>
-    <ul className='hidden md:flex space-x-15
-    text-white font-semibold text-lg cursor-pointer'>
-      <li>Home</li>
-      <li>About</li>
-      <li>Contact</li>
+  <div >
+    {/* menu items */}
+    <ul className={clickMenu ? 'text-white cursor-pointer absolute top-14 left-0 w-full bg-sky-800 px-5 py-5 md:hidden flex flex-col space-y-5'
+  :'hidden md:flex space-x-15 text-white font-semibold text-lg cursor-pointer'}>
+      <li className='hover:text-slate-800 '>Home</li>
+      <li className='hover:text-slate-800 '>About</li>
+      <li className='hover:text-slate-800 '>Contact</li>
     </ul>
   </div>
   {/* web view sign in button */}
@@ -25,7 +27,12 @@ max-w-full items-center h-14 bg-sky-500 '>
     rounded-lg   text-sm  cursor-pointer'>Sign in</button>
    
    {/* mobile view hamburger icon */}
-   <div className='md:hidden text-3xl cursor-pointer'>&#8801;</div>
+   <div
+    onClick={()=>setClickMenu(!clickMenu)}
+    className='md:hidden text-3xl cursor-pointer'>&#8801;</div>
+ 
+
+
 </nav>
 
 
