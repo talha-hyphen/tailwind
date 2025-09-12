@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Sign_in_page from './components/sign_in_page/Sign_in_page'
-   export default function App() {
+import Cards from './components/cards/Cards'
+export default function App() {
 
  const [clickMenu,setClickMenu]=useState(false)
 console.log(clickMenu);
@@ -10,7 +11,7 @@ console.log(clickMenu);
  
 
   return (
-    <div className='bg-slate-800 h-screen'>
+    <div className='bg-slate-800  '>
 
 {/* navbar starts here */}
 
@@ -29,7 +30,7 @@ max-w-full items-center h-14 bg-sky-500 '>
   </div>
   {/* web view sign in button */}
   <button className='hidden md:block bg-green-300 px-[14px] py-[6px]
-    rounded-lg   text-sm  cursor-pointer'><a href='#'  >Sign in</a></button>
+    rounded-lg   text-sm  cursor-pointer'><a  >Sign in</a></button>
    
    {/* mobile view hamburger icon */}
    <div
@@ -58,6 +59,7 @@ max-w-full items-center h-14 bg-sky-500 '>
       </div>
       </div>
       <Sign_in_page/>
-    </div>
+      <Cards/>
+     </div>
   )
 }
